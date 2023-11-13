@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 /**
  * A class for simulating an integer memory cell
 */
@@ -33,8 +35,17 @@ class IntCell
     /**
      * Change the stored value to x.
     */
-   void write( int x ) {
-    storedValue = x;
+   int write( int x ) {
+    return storedValue = x;
    }
+};
 
+int main() {
+    // Create inValue object and call contructor with different value
+    IntCell intValue(2);
+    IntCell intValue2(3);
+    //  Print
+    cout << intValue.read() << "\n";
+
+    cout << intValue2.write(6);
 };
