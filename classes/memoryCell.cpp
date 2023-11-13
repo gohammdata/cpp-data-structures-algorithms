@@ -1,6 +1,10 @@
 /**
  * Like intCell but for any type
 */
+#include <iostream>
+#include <string>
+using namespace std;
+
 template <typename Object>
 class MemoryCell
 {
@@ -16,3 +20,14 @@ class MemoryCell
     private:
         Object storedValue;
 };
+
+int main() {
+    MemoryCell<int> firstObj;
+    MemoryCell<string> strObj{( "hello ")};
+
+    firstObj.write(37);
+    strObj.write( strObj.read() + "world" );
+    cout << firstObj.read() << endl << strObj.read() << endl;
+
+    return 0;
+}
