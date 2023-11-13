@@ -1,49 +1,35 @@
+#include "intCell.h"
 #include <iostream>
+#include <vector>
 using namespace std;
-/**
- * A class for simulating an integer memory cell
-*/
-class IntCell
-{
-    private:
-        int storedValue;
 
-    public:
     /**
      * Construct the IntCell
-     * Initial value is 0.
     */
-    IntCell() {
-        storedValue = 0;
-    }
-
-   /**
-    * Construct the IntCell.
-    * Initial value is initialValue
-   */
-    IntCell( int initialValue ) { 
-        storedValue = initialValue;
+    IntCell::IntCell( int initialValue ) : storedValue( initialValue ) 
+    {
     }
 
     /**
      * Return the stored value.
     */
-   int read() { 
-    return storedValue;
+    int IntCell::read() const {
+        return storedValue;
     }
 
     /**
-     * Change the stored value to x.
+     * Store x.
     */
-   void write( int x ) {
-    storedValue = x;
+   void IntCell::write( int x ) {
+        storedValue = x;
    }
-};
 
-int main() {
-    // Create inValue object and call contructor with different value
-    IntCell intValue(2);
-    //  Print
-    intValue.write( 6 );
-    cout << intValue.read();
-};
+   int main()
+   {
+    IntCell m;
+
+    m.write( 5 );
+    cout << "Cell contents: " << m.read() << endl;
+
+    return 0;
+   }
