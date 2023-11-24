@@ -15,6 +15,9 @@ class List {
             }
         }
     public:
+        /**
+         * A constant iterator storing a pointer for a current node
+        */
         class const_iterator {
             //  Stores a pointer to "current" node and provides implementation of iterator operations
             public:
