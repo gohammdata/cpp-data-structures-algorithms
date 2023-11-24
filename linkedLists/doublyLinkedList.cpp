@@ -1,4 +1,7 @@
 template <typename Object>
+/**
+ * A Double Linked List Class
+*/
 class List {
     private:
         // Node data structure with object data, and pointers to a previous and next node (doubly linked).
@@ -12,6 +15,9 @@ class List {
             }
         }
     public:
+        /**
+         * A constant iterator storing a pointer for a current node
+        */
         class const_iterator {
             //  Stores a pointer to "current" node and provides implementation of iterator operations
             public:
