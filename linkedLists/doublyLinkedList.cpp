@@ -1,4 +1,7 @@
 template <typename Object>
+/**
+ * A Double Linked List Class
+*/
 class List {
     private:
         // Node data structure with object data, and pointers to a previous and next node (doubly linked).

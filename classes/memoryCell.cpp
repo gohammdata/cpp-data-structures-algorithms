@@ -23,7 +23,7 @@ class MemoryCell
 
 int main() {
     MemoryCell<int> firstObj;
-    MemoryCell<string> strObj{( "hello ")};
+    MemoryCell<string> strObj {( "hello ")};
 
     firstObj.write(37);
     strObj.write( strObj.read() + "world" );
