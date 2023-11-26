@@ -73,7 +73,7 @@ class List {
                     return const_iterator::operator*();
                 }
 
-                iteraotr & operator++ () {
+                iterator & operator++ () {
                     current = current->next;
                     return *this;
                 }
