@@ -4,7 +4,9 @@ template <typename Object>
 */
 class List {
     private:
-        // Node data structure with object data, and pointers to a previous and next node (doubly linked).
+        /**
+         *  Node data structure with object data, and pointers to a previous and next node (doubly linked).
+         */
         struct Node {
             Object data;
             Node *prev;
@@ -19,7 +21,9 @@ class List {
          * A constant iterator storing a pointer for a current node
         */
         class const_iterator {
-            //  Stores a pointer to "current" node and provides implementation of iterator operations
+            /**  
+             * Stores a pointer to "current" node and provides implementation of iterator operations
+            */  
             public:
                 const_iterator() : current ( NULL ) {
 
@@ -54,7 +58,45 @@ class List {
                 const_iterator( Node *p ) : current( p ) {
 
                 }
-
+                /**
+                 * Access private members of Nodes
+                */
                 friend class List<Object>;
+        }
+        /**
+         * Iterator that points to the next Node in the linked list
+        */
+        class iterator : public const_iterator {
+            public:
+                iterator() {
+
+                }
+
+                Object & operator*() {
+                    return retrieve();
+                }
+                const Object & operator* () const {
+                    return const_iterator::operator*();
+                }
+
+                iterator & operator++ () {
+                    current = current->next;
+                    return *this;
+                }
+
+                iterator operator++ ( int ) {
+                    iterator old = *this;
+                    **( *this );
+                    return old;
+                }
+
+            protected:
+                iterator( Node *p ) : const_iterator( p ){
+
+                }
+                /**
+                 * Access private members of Nodes
+                */
+                friend class List<Object>
         }
 };
